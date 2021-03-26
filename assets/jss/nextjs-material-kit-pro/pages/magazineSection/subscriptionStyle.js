@@ -53,7 +53,7 @@ const subscriptionStyle = (theme) => ({
     "& h2": {
       font: "normal normal 900 36px/35px Montserrat",
       letterSpacing: "0px",
-      color: blackColor,
+      color: grayColor[27],
       margin: "0",
       textAlign: "left",
       "& span": {

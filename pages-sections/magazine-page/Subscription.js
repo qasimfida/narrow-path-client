@@ -7,7 +7,7 @@ import ScrollAnimation from "react-animate-on-scroll";
 
 import subscriptionStyle from "../../assets/jss/nextjs-material-kit-pro/pages/magazineSection/subscriptionStyle.js";
 // images
-import presentationiPadComments from "assets/img/assets-for-demo/presentationViewSectionComponent/ipad-comments.jpg";
+import grid from "assets/img/icons/grid.png";
 import SectionHeading from "../../components/SectionHeading/SectionHeading.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -37,12 +37,12 @@ export default function Subscription() {
       <div className={classes.container}>
           <img
             className={classes.imgDecor + " " + classes.imgLeft}
-            src={presentationiPadComments}
+            src={grid}
             alt="..."
           />
           <img
             className={classes.imgDecor + " " + classes.imgRight}
-            src={presentationiPadComments}
+            src={grid}
             alt="..."
           />
         <ScrollAnimation animateIn="fadeIn">

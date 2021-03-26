@@ -41,6 +41,9 @@ const featureStyle = (theme) => ({
       marginBottom: "9px",
     },
   },
+  img: {
+    width: '100%'
+  },
   list: {
     marginLeft: "20px",
   },

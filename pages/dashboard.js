@@ -45,28 +45,12 @@ export default function PresentationPage() {
       <Header
         brand="NextJS Material Kit PRO"
         links={<HeaderLinks dropdownHoverColor="info" />}
-        fixed
         color="transparent"
         changeColorOnScroll={{
           height: 86,
           color: "white",
         }}
       />
-      <Parallax
-        image={require("assets/img/icons/main.jpg")}
-        className={classes.parallax}
-      >
-        <div className={classes.container + " " + classes.heightFull}>
-          <GridContainer justify="center" className={classes.heightFull}>
-            <GridItem className={classes.heightFull + " " + classes.flex}>
-              <SearchBox />
-              <div className={classes.brand}>
-                <h1>Explore What Moves You</h1>
-              </div>
-            </GridItem>
-          </GridContainer>
-        </div>
-      </Parallax>
       <div className={classNames(classes.main)}>
         <SectionContent />
         <SectionContentRight />

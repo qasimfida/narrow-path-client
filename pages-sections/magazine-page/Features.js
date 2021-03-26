@@ -70,7 +70,7 @@ export default function SectionContent() {
                 <img
                   src={right}
                   alt="iPad comments"
-                  className={classes.areaImg}
+                  className={classes.img}
                 />
               </ScrollAnimation>
             </div>
@@ -85,7 +85,7 @@ export default function SectionContent() {
                 <img
                   src={left}
                   alt="iPad comments"
-                  className={classes.areaImg}
+                  className={classes.img}
                 />
               </ScrollAnimation>
             </div>
