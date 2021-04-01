@@ -17,6 +17,7 @@ import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import Button from "components/CustomButtons/Button.js";
+import Slider from "react-slick";
 
 const useStyles = makeStyles(postsStyle);
 
@@ -46,6 +47,24 @@ const posts = [
 
 export default function SectionContent() {
   const classes = useStyles();
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 959,
+        settings: {
+          initialSlide: 1,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <div className={classes.section}>
       <div className={classes.container}>
@@ -58,44 +77,48 @@ export default function SectionContent() {
           </div>
         </GridContainer>
         <GridContainer>
-          {posts.map((item) => {
-            return (
-              <GridItem key={item.title} xs={12} sm={12} md={4}>
-                <Card profile plain className={classes.card}>
-                  <ScrollAnimation animateIn="fadeIn">
-                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        className={classes.cardMedia}
-                        src={item.img}
-                        alt="..."
-                      />
-                      <CardBody plain>
-                        <h6 className={classes.cardTitle}>{item.title}</h6>
-                        <div className={classes.cardDate}>{item.date}</div>
-                        <p className={classes.cardDescription}>
-                          {item.description}
-                        </p>
-                      </CardBody>
-                      <CardFooter
-                        className={classes.cardFooter}
-                        profile
-                        plain
-                        className={classes.justifyContentCenter}
-                      >
-                        <Button
-                          className={classes.cardBtn}
-                          round
-                          color="primary"
-                        >
-                          Read more
-                        </Button>
-                      </CardFooter>
-                    </a>
-                  </ScrollAnimation>
-                </Card>
-              </GridItem>
-            );
-          })}
+          <GridItem xs={12}>
+            <Slider {...settings}>
+              {posts.map((item) => {
+                return (
+                  <div key={item.title}>
+                    <Card profile plain className={classes.card}>
+                      <ScrollAnimation animateIn="fadeIn">
+                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                          <img
+                            className={classes.cardMedia}
+                            src={item.img}
+                            alt="..."
+                          />
+                          <CardBody plain>
+                            <h6 className={classes.cardTitle}>{item.title}</h6>
+                            <div className={classes.cardDate}>{item.date}</div>
+                            <p className={classes.cardDescription}>
+                              {item.description}
+                            </p>
+                          </CardBody>
+                          <CardFooter
+                            className={classes.cardFooter}
+                            profile
+                            plain
+                            className={classes.justifyContentCenter}
+                          >
+                            <Button
+                              className={classes.cardBtn}
+                              round
+                              color="primary"
+                            >
+                              Read more
+                            </Button>
+                          </CardFooter>
+                        </a>
+                      </ScrollAnimation>
+                    </Card>
+                  </div>
+                );
+              })}
+            </Slider>
+          </GridItem>
         </GridContainer>
       </div>
     </div>

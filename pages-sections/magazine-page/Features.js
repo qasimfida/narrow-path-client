@@ -77,7 +77,7 @@ export default function SectionContent() {
           </div>
         </GridItem>
       </GridContainer>
-      <GridContainer justify="center">
+      <GridContainer className={classes.pullColumn} justify="center">
         <GridItem md={5} className={classes.mlAuto}>
           <div className={classes.contentMedia}>
             <div className={classes.animeAreaImg}>

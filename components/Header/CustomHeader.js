@@ -19,14 +19,11 @@ import Close from "@material-ui/icons/Close";
 import styles from "assets/jss/nextjs-material-kit-pro/components/headerStyle.js";
 
 // images
-import logoWhite from "../../assets/img/icons/logo white.png";
-import logoPrimary from "../../assets/img/icons/logo primary.png";
 
 const useStyles = makeStyles(styles);
 
 export default function Header(props) {
   const ref = useRef();
-  const [logo, setLogo] = useState(logoWhite);
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const classes = useStyles();
   React.useEffect(() => {
@@ -52,8 +49,9 @@ export default function Header(props) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.add(classes[changeColorOnScroll.color]);
-      setLogo(logoPrimary);
-      ref.current.src = logoPrimary;
+        if(changeColorOnScroll.brand){
+          ref.current.src = changeColorOnScroll.brand;
+        }
     } else {
       document.body
         .getElementsByTagName("header")[0]
@@ -61,10 +59,8 @@ export default function Header(props) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.remove(classes[changeColorOnScroll.color]);
-      ref.current.src = logoWhite;
-      setLogo(logoWhite);
+      ref.current.src = props.brand;
     }
-    console.log(ref.current);
   };
   const { color, links, brand, fixed, absolute } = props;
   const appBarClasses = classNames({
@@ -79,7 +75,7 @@ export default function Header(props) {
         <Button className={classes.title}>
           <Link href="/presentation">
             <a>
-              <img ref={ref} src={logoWhite} />
+              <img ref={ref} src={props.brand} />
             </a>
           </Link>
         </Button>

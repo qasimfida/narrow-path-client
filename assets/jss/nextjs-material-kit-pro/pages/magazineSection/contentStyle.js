@@ -7,7 +7,7 @@ import {
   blackColor,
   grayColor,
   hexToRgb,
-  primaryColor
+  primaryColor,
 } from "assets/jss/nextjs-material-kit-pro.js";
 
 const contentStyle = (theme) => ({
@@ -16,20 +16,20 @@ const contentStyle = (theme) => ({
     ...section,
     paddingTop: "75px",
     "&.last-child": {
-      paddingBottom: '75px'
-    }
+      paddingBottom: "75px",
+    },
   },
   title: {
     color: grayColor[1],
     font: "normal normal normal 18px/22px Roboto",
     letterSpacing: "0px",
     color: "#B5B5B5",
-    margin: '20px 0',
+    margin: "20px 0",
     "&:nth-child(2)": {
       color: blackColor,
     },
   },
-  
+
   imageContainer: {
     maxWidth: "900px",
     position: "relative",
@@ -43,10 +43,16 @@ const contentStyle = (theme) => ({
     maxWidth: "100%",
     zIndex: 2,
     [theme.breakpoints.down("sm")]: {
-      maxWidth: "130px",
-      maxHeight: "170px",
+      // maxWidth: "130px",
+      // maxHeight: "170px",
+      width: "100%",
     },
-  }
+  },
+  gridItemPull: {
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column-reverse",
+    },
+  },
 });
 
 export default contentStyle;

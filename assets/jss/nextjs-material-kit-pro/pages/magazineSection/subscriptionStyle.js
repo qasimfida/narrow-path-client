@@ -17,6 +17,7 @@ const subscriptionStyle = (theme) => ({
     padding: "92px 0 48px 0",
     background: grayColor[1],
     position: "relative",
+    overflow: "hidden",
   },
   title: {
     font: "normal normal 900 36px/35px Montserrat",
@@ -32,10 +33,18 @@ const subscriptionStyle = (theme) => ({
   imgRight: {
     top: "40px",
     right: "90px",
+    [theme.breakpoints.down("sm")]: {
+      top: "-44px",
+      right: "10px",
+    },
   },
   imgLeft: {
     bottom: "36px",
     left: "90px",
+    [theme.breakpoints.down("sm")]: {
+      bottom: "-44px",
+      left: "10px",
+    },
   },
   divider: {
     width: "70px",
@@ -51,6 +60,7 @@ const subscriptionStyle = (theme) => ({
     width: "242px",
     marginBottom: "72px",
     "& h2": {
+      textTransform: 'uppercase',
       font: "normal normal 900 36px/35px Montserrat",
       letterSpacing: "0px",
       color: grayColor[27],
@@ -60,6 +70,9 @@ const subscriptionStyle = (theme) => ({
         textAlign: "right",
         display: "block",
       },
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: '20px'
     },
   },
   shortText: {

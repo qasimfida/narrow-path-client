@@ -17,10 +17,15 @@ export default function SectionContentRight() {
     <div className={classes.section}>
       <div className={classes.container}>
         <GridContainer justify="center" alignItems="center">
-          <SectionHeading text="Read our Latest Articles" className={classes.heading} />
+          <SectionHeading
+            text="Read our Latest Articles"
+            className={classes.heading}
+          />
         </GridContainer>
         <GridContainer justify="center" alignItems="center">
-          <Slider />
+          <GridItem xs={12}>
+            <Slider />
+          </GridItem>
         </GridContainer>
       </div>
     </div>

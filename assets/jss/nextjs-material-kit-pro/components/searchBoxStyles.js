@@ -21,12 +21,23 @@ const searchBoxStyle = (theme) => ({
     display: "flex",
     justifyContent: "space-between",
     margin: "0 auto",
+    [theme.breakpoints.down("sm")]: {
+      height: "auto",
+      background: "transparent",
+      width: "auto",
+      flexDirection: "column",
+    },
   },
   searchItem: {
     borderRadius: "43px",
     padding: "18px 40px",
     width: "318px",
     textAlign: "left",
+    [theme.breakpoints.down("sm")]: {
+      background: whiteColor,
+      borderRadius: "12px",
+      margin: "9px",
+    },
   },
   active: {
     boxShadow: "0px 3px 6px #00000029",
@@ -43,6 +54,10 @@ const searchBoxStyle = (theme) => ({
     color: whiteColor,
     background: primaryColor[0],
     borderRadius: "50%",
+    [theme.breakpoints.down("sm")]: {
+      borderRadius: "12px",
+      width: "auto",
+    },
   },
   searchItemTitle: {
     color: "#000000",

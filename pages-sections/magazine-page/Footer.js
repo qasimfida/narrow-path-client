@@ -18,6 +18,7 @@ import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import Button from "components/CustomButtons/Button.js";
+import message from "../../assets/img/icons/mail.svg";
 
 const useStyles = makeStyles(footerStyle);
 
@@ -26,7 +27,7 @@ export default function SectionContent() {
   return (
     <div className={classes.section}>
       <GridContainer fluid>
-        <GridItem xs={12} sm={12} md={3}>
+        <GridItem className={classes.gridLine} xs={12} sm={12} md={3}>
           <ScrollAnimation animateIn="fadeIn">
             <a
               href="/"
@@ -41,7 +42,7 @@ export default function SectionContent() {
             </p>
           </ScrollAnimation>
         </GridItem>
-        <GridItem xs={12} sm={4} md={2}>
+        <GridItem className={classes.gridLine} xs={12} sm={4} md={2}>
           <ScrollAnimation animateIn="fadeIn">
             <h3 className={classes.heading}>About Us</h3>
             <a
@@ -74,7 +75,7 @@ export default function SectionContent() {
             </a>
           </ScrollAnimation>
         </GridItem>
-        <GridItem xs={12} sm={4} md={2}>
+        <GridItem className={classes.gridLine} xs={12} sm={4} md={2}>
           <ScrollAnimation animateIn="fadeIn">
             <h3 className={classes.heading}>Market</h3>
             <a
@@ -114,7 +115,7 @@ export default function SectionContent() {
             </a>
           </ScrollAnimation>
         </GridItem>
-        <GridItem xs={12} sm={4} md={2}>
+        <GridItem className={classes.gridLine} xs={12} sm={4} md={2}>
           <ScrollAnimation animateIn="fadeIn">
             <h3 className={classes.heading}>Legal</h3>
             <a
@@ -140,13 +141,20 @@ export default function SectionContent() {
             </a>
           </ScrollAnimation>
         </GridItem>
-        <GridItem xs={12} sm={12} md={3}>
+        <GridItem className={classes.gridLine} xs={12} sm={12} md={3}>
           <ScrollAnimation animateIn="fadeIn">
             <h3 className={classes.heading}>Subscribe to Newsletter</h3>
             <p className={classes.paragraph}>
               Join our newsletter and get news in your inbox every week! We hate
               spam too, so no worries about this.!
             </p>
+            <form className={classes.footerInput}>
+              <input placeholder="Your Email..." />
+              <Button color="primary" >
+                {" "}
+                <img src={message} />{" "}
+              </Button>
+            </form>
           </ScrollAnimation>
         </GridItem>
       </GridContainer>

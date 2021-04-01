@@ -31,8 +31,18 @@ import SectionOverview from "pages-sections/presentation-page/SectionOverview.js
 import SectionPricing from "pages-sections/presentation-page/SectionPricing.js";
 
 import magazineStyle from "assets/jss/nextjs-material-kit-pro/pages/magazineStyle.js";
-
+import styled from "styled-components";
+import whiteLogo from '../assets/img/icons/logo white.png'
+import primaryLogo from '../assets/img/icons/logo primary.png'
+import { primaryColor } from "../assets/jss/nextjs-material-kit-pro";
 const useStyles = makeStyles(magazineStyle);
+const Title = styled.div`
+  @media (max-width: 992px) {
+    h1 {
+      font-size: 54px;
+    }
+  }
+`;
 
 export default function PresentationPage() {
   React.useEffect(() => {
@@ -43,13 +53,14 @@ export default function PresentationPage() {
   return (
     <div>
       <Header
-        brand="NextJS Material Kit PRO"
+        brand={whiteLogo}
         links={<HeaderLinks dropdownHoverColor="info" />}
         fixed
         color="transparent"
         changeColorOnScroll={{
           height: 86,
           color: "white",
+          brand: primaryLogo
         }}
       />
       <Parallax
@@ -60,9 +71,10 @@ export default function PresentationPage() {
           <GridContainer justify="center" className={classes.heightFull}>
             <GridItem className={classes.heightFull + " " + classes.flex}>
               <SearchBox />
-              <div className={classes.brand}>
+
+              <Title className={classes.brand}>
                 <h1>Explore What Moves You</h1>
-              </div>
+              </Title>
             </GridItem>
           </GridContainer>
         </div>

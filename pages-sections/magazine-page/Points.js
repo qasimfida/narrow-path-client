@@ -23,32 +23,32 @@ const cards = [
   {
     label: "Roadside Attractions",
     number: "2,317",
-    img: road
+    img: road,
   },
   {
     label: "Lighthouses",
     number: "1,842",
-    img: lighthouse
+    img: lighthouse,
   },
   {
     label: "Aquariums | Zoos | Sanctuaries",
     number: "900",
-    img: zoo
+    img: zoo,
   },
   {
     label: "Roadside Attractions",
     number: "2,735",
-    img: sea
+    img: sea,
   },
   {
     label: "Museums",
     number: "19,621",
-    img: mueseum
+    img: mueseum,
   },
   {
     label: "Other Points of Interest",
     number: "476,853",
-    img: park
+    img: park,
   },
 ];
 
@@ -58,7 +58,7 @@ export default function SectionContent() {
     <div className={classes.section}>
       <div className={classes.container}>
         <GridContainer justify="center">
-          <GridItem xs={4}>
+          <GridItem xs={12} md={4}>
             <SectionHeading
               className={classes.heading}
               text="Things to EXPLORE on your next trip"
@@ -69,7 +69,14 @@ export default function SectionContent() {
         <div className={classes.boxWrapper}>
           <GridContainer justify="center">
             {cards.map((item) => (
-              <GridItem key={item.label} xs={12} sm={6} md={6} lg={4} className={classes.mlAuto}>
+              <GridItem
+                key={item.label}
+                xs={6}
+                sm={6}
+                md={6}
+                lg={4}
+                className={classes.mlAuto + " " + classes.gridSpacing}
+              >
                 <div className={classes.card}>
                   <ScrollAnimation animateIn="fadeInUp">
                     <img

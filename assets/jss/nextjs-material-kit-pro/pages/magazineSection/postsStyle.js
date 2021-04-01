@@ -1,3 +1,4 @@
+import { red } from "@material-ui/core/colors";
 import {
   container,
   section,
@@ -16,12 +17,35 @@ const postsStyle = (theme) => ({
   section: {
     padding: "64px 0",
     background: whiteColor,
+    "& .slick-dots": {
+      bottom: "-15px",
+      position: "relative",
+      "& li": {
+        height: "12px",
+        width: "12px",
+        margin: "0 10px",
+        "&.slick-active": {
+          "& button": {
+            background: primaryColor[0],
+          },
+        },
+        "& button": {
+          background: grayColor[26],
+          borderRadius: "50%",
+          "&:before": {
+            display: "none",
+          },
+        },
+      },
+    },
   },
   card: {
     margin: "30px auto 0 auto",
+    padding: "0 15px",
   },
   cardMedia: {
-    height: "262px",
+    height: "auto",
+    width: "100%",
     boxShadow: "none",
   },
   cardTitle: {

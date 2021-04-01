@@ -18,7 +18,7 @@ export default function Slider() {
   return (
     <div className={"last-child " + classes.section}>
       <div className={classes.container}>
-        <GridContainer justify="center" alignItems="center">
+        <GridContainer className={classes.gridItemPull}  justify="center" alignItems="center">
           <GridItem xs={12} md={5} className={classes.mlAuto}>
             <div className={classes.imageContainer}>
               <div className={classes.animeAreaImg}>

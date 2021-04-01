@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styles from "../../assets/jss/nextjs-material-kit-pro/components/searchBoxStyles";
 import icon from "../../assets/img/icons/search.svg";
 import { makeStyles } from "@material-ui/core";
+import styled from "styled-components";
+import { whiteColor } from "../../assets/jss/nextjs-material-kit-pro";
 
 const useStyles = makeStyles(styles);
 
@@ -59,7 +61,8 @@ export default (props) => {
             className={
               (state[index].active ? classes.active : "") +
               " " +
-              classes.searchItem
+              classes.searchItem +
+              " search-card-item"
             }
           >
             <h3 className={classes.searchItemTitle}>{item.name}</h3>
@@ -71,7 +74,10 @@ export default (props) => {
           </div>
         );
       })}
-      <div className={classes.searchBtn} onClick={handleSearch}>
+      <div
+        className={classes.searchBtn + " search-card-icon"}
+        onClick={handleSearch}
+      >
         <img src={icon} alt="search icon" />
       </div>
     </div>

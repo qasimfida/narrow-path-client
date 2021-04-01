@@ -17,11 +17,19 @@ const featureStyle = (theme) => ({
     padding: "98px 0",
     background: whiteColor,
   },
+  pullColumn: {
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column-reverse",
+    },
+  },
   pb75: {
     paddingBottom: "75px",
   },
   content: {
     padding: "0 70px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0 20px 0 0",
+    },
   },
   contentMedia: {
     paddingTop: "32px",
@@ -42,7 +50,7 @@ const featureStyle = (theme) => ({
     },
   },
   img: {
-    width: '100%'
+    width: "100%",
   },
   list: {
     marginLeft: "20px",
@@ -59,12 +67,16 @@ const featureStyle = (theme) => ({
     width: "24px",
     marginRight: "24px",
   },
-  btnExplore : {
-    font: 'normal normal bold 18px/25px Roboto',
-    letterSpacing: '0px',
-    padding: '17px 52px',
-    marginTop: '40px'
-  }
+  btnExplore: {
+    font: "normal normal bold 18px/25px Roboto",
+    letterSpacing: "0px",
+    padding: "17px 52px",
+    marginTop: "40px",
+    [theme.breakpoints.down("sm")]: {
+      margin: "40px auto 0 auto",
+      display: "block",
+    },
+  },
 });
 
 export default featureStyle;

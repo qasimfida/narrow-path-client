@@ -17,11 +17,18 @@ const postsStyle = (theme) => ({
   section: {
     padding: "32px 70px",
     background: grayColor[27],
+    [theme.breakpoints.down("sm")]: {
+      padding: "32px",
+    },
   },
   divider: {
     background: whiteColor,
     height: "1px",
     margin: "14px auto 36px auto",
+    [theme.breakpoints.down("sm")]: {
+      opacity: "0",
+      margin: "15px 0",
+    },
   },
   heading: {
     font: "normal normal bold 17px/20px Roboto",
@@ -50,7 +57,35 @@ const postsStyle = (theme) => ({
     color: whiteColor,
     font: "normal normal 400 14px/17px Roboto",
     textAlign: "center",
-    marginBottom: 0
+    marginBottom: 0,
+  },
+  gridLine: {
+    [theme.breakpoints.down("sm")]: {
+      borderBottom: `2px solid ${whiteColor}`,
+    },
+  },
+  footerInput: {
+    display: "flex",
+    marginTop: '16px',
+    "& input": {
+      border: 'none',
+      background: "transparent",
+      borderBottom: "1px solid #fff",
+      height: "40px",
+      maxWidth: "calc(100% - 51px)",
+      outline: "none",
+      boxShadow: "none",
+      color: whiteColor
+    },
+    "& button": {
+      margin: 0,
+      height: "41px",
+      width: "51px",
+      padding: "0",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    },
   },
 });
 

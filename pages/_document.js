@@ -51,6 +51,7 @@ class MyDocument extends Document {
           <div id="page-transition"></div>
           <Main />
           <NextScript />
+          <script src="jquery-1.9.1.min.js"></script>
         </body>
       </html>
     );
