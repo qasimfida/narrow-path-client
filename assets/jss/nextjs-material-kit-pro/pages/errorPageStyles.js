@@ -8,8 +8,8 @@ import {
 const errorPageStyles = theme => ({
   contentCenter: {
     position: "absolute",
-    top: "50%",
-    left: "50%",
+    top: "65%",
+    left: "75%",
     zIndex: "3",
     transform: "translate(-50%,-50%)",
     textAlign: "center",
@@ -48,7 +48,7 @@ const errorPageStyles = theme => ({
     border: "0",
     alignItems: "center",
     "&:before": {
-      background: "rgba(" + hexToRgb(blackColor) + ", 0.5)"
+      // background: "rgba(" + hexToRgb(blackColor) + ", 0.5)"
     },
     "&:before,&:after": {
       position: "absolute",

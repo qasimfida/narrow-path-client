@@ -138,7 +138,7 @@ export default function HeaderLinks(props) {
           <CustomDropdown
             left
             caret={false}
-            hoverColor="primary"
+            hoverColor="light"
             buttonText={<Profile />}
             buttonProps={{
               className: classes.navLink + " " + classes.imageDropdownButton,
@@ -149,23 +149,17 @@ export default function HeaderLinks(props) {
               <ListItem
                 className={classes.listItem + " " + classes.dropdownItem}
               >
-                <Link href="#">
                   <a className={classes.navItemFlex}>Account</a>
-                </Link>
               </ListItem>,
               <ListItem
                 className={classes.listItem + " " + classes.dropdownItem}
               >
-                <Link href="#">
                   <a className={classes.navItemFlex}>Settings</a>
-                </Link>
               </ListItem>,
               <ListItem
                 className={classes.listItem + " " + classes.dropdownItem}
               >
-                <Link href="#">
                   <a className={classes.navItemFlex}>Sign out</a>
-                </Link>
               </ListItem>,
             ]}
           />

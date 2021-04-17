@@ -7,15 +7,17 @@ import ListItem from "@material-ui/core/ListItem";
 // @material-ui/icons
 import Favorite from "@material-ui/icons/Favorite";
 // core components
-import Header from "components/Header/Header.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
+import Header from "components/Header/CustomHeader.js";
+import HeaderLinks from "components/Header/CustomLinks.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 
 import errorPageStyle from "assets/jss/nextjs-material-kit-pro/pages/errorPageStyles.js";
 
-import image from "assets/img/clint-mckoy.jpg";
+import image from "assets/img/icons/404.svg";
+import whiteLogo from "../assets/img/icons/logo white.png";
+import primaryLogo from "../assets/img/icons/logo primary.png";
 
 const useStyles = makeStyles(errorPageStyle);
 
@@ -28,23 +30,27 @@ export default function ErrorPage({ ...rest }) {
   return (
     <div>
       <Header
-        absolute
+        brand={whiteLogo}
+        links={<HeaderLinks dropdownHoverColor="info" />}
+        fixed
         color="transparent"
-        brand="NextJS Material Kit PRO"
-        links={<HeaderLinks dropdownHoverColor="dark" />}
-        {...rest}
+        changeColorOnScroll={{
+          height: 86,
+          color: "white",
+          brand: primaryLogo,
+        }}
       />
       <div
         className={classes.pageHeader}
         style={{
           backgroundImage: "url(" + image + ")",
           backgroundSize: "cover",
-          backgroundPosition: "top center"
+          backgroundPosition: "top center",
         }}
       >
         {/* <div className={classes.container}> */}
         <div className={classes.contentCenter}>
-          <GridContainer>
+          <GridContainer justify="flex-end" >
             <GridItem md={12}>
               <h1 className={classes.title}>404</h1>
               <h2 className={classes.subTitle}>Page not found :(</h2>
@@ -56,62 +62,6 @@ export default function ErrorPage({ ...rest }) {
         </div>
         {/* </div> */}
       </div>
-      <Footer
-        content={
-          <div>
-            <div className={classes.left}>
-              <List className={classes.list}>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/?ref=njsmkp-error"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    Creative Tim
-                  </a>
-                </ListItem>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/presentation/?ref=njsmkp-error"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    About us
-                  </a>
-                </ListItem>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="http://blog.creative-tim.com/?ref=njsmkp-error"
-                    className={classes.block}
-                  >
-                    Blog
-                  </a>
-                </ListItem>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/license/?ref=njsmkp-error"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    Licenses
-                  </a>
-                </ListItem>
-              </List>
-            </div>
-            <div className={classes.right}>
-              &copy; {1900 + new Date().getYear()} , made with{" "}
-              <Favorite className={classes.icon} /> by{" "}
-              <a
-                href="https://www.creative-tim.com/?ref=njsmkp-error"
-                target="_blank"
-              >
-                Creative Tim
-              </a>{" "}
-              for a better web.
-            </div>
-          </div>
-        }
-      />
     </div>
   );
 }

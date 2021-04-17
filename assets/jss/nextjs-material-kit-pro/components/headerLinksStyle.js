@@ -71,9 +71,10 @@ const headerLinksStyle = (theme) => ({
   dropdownItem: {
     color: grayColor[8],
     font: "normal normal normal 16px/19px Roboto",
-    letterspacing: "0px",
+    letterSpacing: "0px",
     padding: "0 20px",
     textAlign: "left",
+    borderRadius: "10px",
   },
   navLink: {
     color: whiteColor,

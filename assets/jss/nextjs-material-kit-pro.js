@@ -145,7 +145,7 @@ const grayColor = [
   "#BBBBBB",
   "#c7c7c7",
 ];
-const lightColor = ["#C5C5C5"];
+const lightColor = ["#C5C5C5","#e4caff"];
 const whiteColor = "#FFF";
 const blackColor = "#000";
 const twitterColor = "#55acee";

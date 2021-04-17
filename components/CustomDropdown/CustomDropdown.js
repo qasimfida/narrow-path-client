@@ -184,7 +184,8 @@ CustomDropdown.propTypes = {
     "success",
     "warning",
     "danger",
-    "rose"
+    "rose",
+    "light"
   ]),
   buttonText: PropTypes.node,
   buttonIcon: PropTypes.object,
