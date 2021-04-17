@@ -5,7 +5,7 @@ import {
   cardTitle,
   whiteColor,
   blackColor,
-  hexToRgb
+  hexToRgb,
 } from "assets/jss/nextjs-material-kit-pro.js";
 
 import customCheckboxRadioSwitchStyle from "assets/jss/nextjs-material-kit-pro/customCheckboxRadioSwitchStyle.js";
@@ -16,7 +16,7 @@ const signupPageStyle = {
     zIndex: "2",
     position: "relative",
     paddingTop: "20vh",
-    color: whiteColor
+    color: whiteColor,
   },
   pageHeader: {
     minHeight: "100vh",
@@ -28,16 +28,16 @@ const signupPageStyle = {
     border: "0",
     alignItems: "center",
     "&:before": {
-      background: "rgba(" + hexToRgb(blackColor) + ", 0.5)"
+      background: "rgba(" + hexToRgb(blackColor) + ", 0.5)",
     },
-    "&:after": {
-      background:
-        "linear-gradient(60deg,rgba(" +
-        hexToRgb(primaryColor[4]) +
-        ",.56),rgba(" +
-        hexToRgb(primaryColor[5]) +
-        ",.95))"
-    },
+    // "&:after": {
+    //   background:
+    //     "linear-gradient(60deg,rgba(" +
+    //     hexToRgb(primaryColor[4]) +
+    //     ",.56),rgba(" +
+    //     hexToRgb(primaryColor[5]) +
+    //     ",.95))",
+    // },
     "&:before,&:after": {
       position: "absolute",
       zIndex: "1",
@@ -46,8 +46,8 @@ const signupPageStyle = {
       display: "block",
       left: "0",
       top: "0",
-      content: '""'
-    }
+      content: '""',
+    },
   },
   cardSignup: {
     borderRadius: "6px",
@@ -60,13 +60,14 @@ const signupPageStyle = {
       hexToRgb(blackColor) +
       ", 0.2);",
     marginBottom: "100px",
-    padding: "40px 0px"
+    padding: "40px 0px",
   },
   cardTitle: {
-    ...cardTitle,
+    font: "normal normal bold 36px/43px Roboto",
     textDecoration: "none",
     textAlign: "center !important",
-    marginBottom: "0.75rem"
+    margin: 0,
+    marginBottom: "24px",
   },
   ...customCheckboxRadioSwitchStyle,
   socials: {
@@ -78,23 +79,39 @@ const signupPageStyle = {
     top: "0",
     height: "100%",
     lineHeight: "41px",
-    fontSize: "20px"
+    fontSize: "20px",
   },
   textCenter: {
-    textAlign: "center"
+    textAlign: "center",
   },
   inputAdornment: {
     marginRight: "18px",
-    position: "relative"
+    position: "relative",
   },
   inputAdornmentIcon: {
-    color: grayColor[13]
+    color: grayColor[13],
   },
   form: {
-    margin: "0"
+    margin: "0",
   },
-  infoArea: {
-    padding: "0px 0px 20px !important"
+  customFormControlClasses: {
+    marginBottom: "12px",
+  },
+  infoCard: {
+    padding: "8px 0 !important",
+  },
+  infoTitle: {
+    font: "normal normal bold 18px/22px Roboto",
+    letterSpacing: "0px",
+    color: grayColor[33],
+    margin: 0,
+    marginBottom: "10px",
+  },
+  infoDescription: {
+    font: "normal normal normal 12px/14px Roboto",
+    letterSpacing: "0px",
+    color: grayColor[33],
+    margin: 0,
   },
   block: {
     color: "inherit",
@@ -105,39 +122,39 @@ const signupPageStyle = {
     borderRadius: "3px",
     textDecoration: "none",
     position: "relative",
-    display: "block"
+    display: "block",
   },
   inlineBlock: {
     display: "inline-block",
     padding: "0px",
-    width: "auto"
+    width: "auto",
   },
   list: {
     marginBottom: "0",
     padding: "0",
-    marginTop: "0"
+    marginTop: "0",
   },
   left: {
     float: "left!important",
     display: "block",
     "&,& *,& *:hover,& *:focus": {
-      color: whiteColor + "  !important"
-    }
+      color: whiteColor + "  !important",
+    },
   },
   right: {
     padding: "15px 0",
     margin: "0",
     float: "right",
     "&,& *,& *:hover,& *:focus": {
-      color: whiteColor + "  !important"
-    }
+      color: whiteColor + "  !important",
+    },
   },
   icon: {
     width: "18px",
     height: "18px",
     top: "3px",
-    position: "relative"
-  }
+    position: "relative",
+  },
 };
 
 export default signupPageStyle;

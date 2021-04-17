@@ -17,15 +17,15 @@ export default function InfoArea(props) {
   const iconWrapper = classNames({
     [classes.iconWrapper]: true,
     [classes[iconColor]]: true,
-    [classes.iconWrapperVertical]: vertical
+    [classes.iconWrapperVertical]: vertical,
   });
   const iconClasses = classNames({
     [classes.icon]: true,
-    [classes.iconVertical]: vertical
+    [classes.iconVertical]: vertical,
   });
   const infoAreaClasses = classNames({
     [classes.infoArea]: true,
-    [className]: className !== undefined
+    [className]: className !== undefined,
   });
   let icon = null;
   switch (typeof props.icon) {
@@ -38,7 +38,7 @@ export default function InfoArea(props) {
   }
   return (
     <div className={infoAreaClasses}>
-      <div className={iconWrapper}>{icon}</div>
+      {icon && <div className={iconWrapper}>{icon}</div>}
       <div className={classes.descriptionWrapper}>
         <h4 className={classes.title}>{title}</h4>
         <div className={classes.description}>{description}</div>
@@ -48,7 +48,7 @@ export default function InfoArea(props) {
 }
 
 InfoArea.defaultProps = {
-  iconColor: "gray"
+  iconColor: "gray",
 };
 
 InfoArea.propTypes = {
@@ -62,8 +62,8 @@ InfoArea.propTypes = {
     "success",
     "info",
     "rose",
-    "gray"
+    "gray",
   ]),
   vertical: PropTypes.bool,
-  className: PropTypes.string
+  className: PropTypes.string,
 };

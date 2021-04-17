@@ -56,7 +56,7 @@ const drawerWidth = 260;
 
 const primaryColor = [
   "#6E00E3",
-  "#ab47bc",
+  "#d1a7ff",
   "#8e24aa",
   "#af2cc5",
   "#e1bee7",
@@ -74,7 +74,7 @@ const warningColor = [
   "#ffb74d",
 ];
 const dangerColor = [
-  "#f44336",
+  "#E10000",
   "#ef5350",
   "#e53935",
   "#f55a4e",
@@ -104,6 +104,7 @@ const infoColor = [
   "#4dd0e1",
 ];
 const roseColor = ["#e91e63", "#ec407a", "#d81b60", "#f8bbd0", "#f06292"];
+const greenColor = "#009600";
 const grayColor = [
   "#999",
   "#F4F5F8",
@@ -134,6 +135,15 @@ const grayColor = [
   "#707070",
   "#050708",
   "#0F0F0F",
+  "#F6F6F6",
+  "#565656",
+  "#DBDBDB",
+  "#333333",
+  "#1D1E22",
+  "#515151",
+  "#191919",
+  "#BBBBBB",
+  "#c7c7c7",
 ];
 const lightColor = ["#C5C5C5"];
 const whiteColor = "#FFF";
@@ -149,6 +159,7 @@ const behanceColor = "#1769ff";
 const dribbbleColor = "#ea4c89";
 const redditColor = "#ff4500";
 const instagramColor = "#125688";
+const paypalColor = "rgb(248, 181, 50)";
 
 const transition = {
   transition: "all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)",
@@ -498,5 +509,7 @@ export {
   btnLink,
   coloredShadow,
   hexToRgb,
-  lightColor
+  lightColor,
+  paypalColor,
+  greenColor
 };

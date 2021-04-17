@@ -1,0 +1,132 @@
+import {
+  container,
+  section,
+  title,
+  sectionDescription,
+  mlAuto,
+  blackColor,
+  grayColor,
+  hexToRgb,
+  primaryColor,
+  whiteColor,
+} from "assets/jss/nextjs-material-kit-pro.js";
+import { lightColor } from "../../../nextjs-material-kit-pro";
+
+const contentStyle = (theme) => ({
+  container,
+  section: {
+    ...section,
+    paddingTop: "75px",
+    "&.last-child": {
+      paddingBottom: "75px",
+    },
+  },
+  tabsWrapper: {
+    display: "flex",
+    background: whiteColor,
+    borderRadius: "20px",
+    width: "max-content",
+    maxWidth: "100%",
+    marginBottom: "13px",
+    position: "relative",
+    zIndex: 2,
+  },
+  tabButton: {
+    borderRadius: "20px",
+    height: "40px",
+    position: "relative",
+    width: "160px",
+    minWidth: "160px",
+    color: grayColor[30],
+    background: "transparent",
+    padding: "12px 36px",
+    textAlign: "left",
+    boxShadow: "none",
+    margin: 0,
+    "&:hover": {
+      color: whiteColor,
+      background: primaryColor[0],
+    },
+    "&:focus": {
+      color: whiteColor,
+      background: primaryColor[0],
+    },
+    "& .card": {
+      background: whiteColor,
+      borderRadius: "10px",
+      boxShadow: "0px 3px 6px #00000029",
+      padding: " 0 0 8px 0",
+      display: "flex",
+      flexDirection: "column",
+    },
+    "& .dropdown": {
+      borderRadius: "10px",
+      position: "absolute",
+      top: "calc(100%)",
+      left: 0,
+      height: "0",
+      display: "block",
+      overflow: "hidden",
+      transition: "0.3s all ease",
+      width: "100%",
+      maxWidth: "max-content",
+    },
+    "&:hover .dropdown": {
+      transition: "0.3s all ease",
+      padding: "2px 2px 2px 2px",
+      height: "auto",
+    },
+  },
+  active: {
+    color: whiteColor,
+    background: primaryColor[0],
+  },
+  tabIcon: {
+    marginRight: "16px",
+    lineHeight: 0,
+  },
+  panelBody: {
+    background: whiteColor,
+    border: `1px solid ${grayColor[31]}`,
+    borderRadius: "25px",
+    minHeight: "400px",
+    padding: "36px  70px 24px 70px",
+    overflow: "hidden",
+  },
+  dropDownHeader: {
+    borderBottom: `1px solid ${lightColor[0]}`,
+    padding: "8px 0",
+    marginBottom: "12px",
+  },
+  dropdownBtn: {
+    background: "transparent",
+    boxShadow: "none",
+    borderRadius: "10px",
+    color: grayColor[30],
+    font: "normal normal normal 14px/17px Roboto",
+    letterSpacing: "0px",
+    height: "36px",
+    margin: "0 8px",
+    textAlign: "left",
+    "&.active": {
+      color: grayColor[30],
+      background: primaryColor[1],
+    },
+    "&:hover": {
+      boxShadow: "none",
+      color: grayColor[30],
+      background: primaryColor[1],
+    },
+  },
+  editBtn: {
+    width: "162px",
+    height: "40px",
+    background: grayColor[34],
+    borderRadius: "20px",
+    margin: "0",
+    marginTop: "12px",
+    textTransform: "uppercase",
+  },
+});
+
+export default contentStyle;

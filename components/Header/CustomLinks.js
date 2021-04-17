@@ -38,6 +38,7 @@ import Layers from "@material-ui/icons/Layers";
 import ShoppingBasket from "@material-ui/icons/ShoppingBasket";
 import LineStyle from "@material-ui/icons/LineStyle";
 import Error from "@material-ui/icons/Error";
+import profileImage from "../../assets/img/icons/profile.png";
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
@@ -108,24 +109,81 @@ export default function HeaderLinks(props) {
       link: "/home",
     },
     {
-      name: "Sign Up",
+      name: "Explore",
       link: "/home",
     },
   ];
+  const Profile = ({ className }) => {
+    return (
+      <div className={classes.profileImg}>
+        <img src={profileImage} alt="profile" />
+      </div>
+    );
+  };
+  const user = { id: "12341234" };
   return (
     <List className={classes.list + " " + classes.mlAuto}>
       {links.map((item) => (
-        <ListItem  key={item.name} className={classes.listItem + " " + classes.navLink}>
+        <ListItem
+          key={item.name}
+          className={classes.listItem + " " + classes.navLink}
+        >
           <Link href={item.link}>
             <a className={classes.navItemFlex}>{item.name}</a>
           </Link>
         </ListItem>
       ))}
-      <ListItem>
-        <Button color="white" round>
-          Login
-        </Button>
-      </ListItem>
+      {user && user.id ? (
+        <ListItem className={classes.listItem + " " + classes.navLink}>
+          <CustomDropdown
+            left
+            caret={false}
+            hoverColor="primary"
+            buttonText={<Profile />}
+            buttonProps={{
+              className: classes.navLink + " " + classes.imageDropdownButton,
+              color: "transparent",
+            }}
+            dropPlacement="bottom"
+            dropdownList={[
+              <ListItem
+                className={classes.listItem + " " + classes.dropdownItem}
+              >
+                <Link href="#">
+                  <a className={classes.navItemFlex}>Account</a>
+                </Link>
+              </ListItem>,
+              <ListItem
+                className={classes.listItem + " " + classes.dropdownItem}
+              >
+                <Link href="#">
+                  <a className={classes.navItemFlex}>Settings</a>
+                </Link>
+              </ListItem>,
+              <ListItem
+                className={classes.listItem + " " + classes.dropdownItem}
+              >
+                <Link href="#">
+                  <a className={classes.navItemFlex}>Sign out</a>
+                </Link>
+              </ListItem>,
+            ]}
+          />
+        </ListItem>
+      ) : (
+        <>
+          <ListItem className={classes.listItem + " " + classes.navLink}>
+            <Link href="/signup">
+              <a className={classes.navItemFlex}>Sign Up</a>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Button color="white" round>
+              Login
+            </Button>
+          </ListItem>
+        </>
+      )}
     </List>
   );
 }

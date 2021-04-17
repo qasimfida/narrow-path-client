@@ -1,0 +1,39 @@
+export const SearchIcon = ({ className, size, color }) => (
+  <span className={className} style={{ display: "flex" }}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size || "31.506"}
+      height={size || "31.506"}
+      viewBox="0 0 31.506 31.506"
+    >
+      <g
+        id="Icon_feather-search"
+        data-name="Icon feather-search"
+        transform="translate(2 2)"
+      >
+        <path
+          id="Path_1"
+          data-name="Path 1"
+          d="M28.214,16.357A11.857,11.857,0,1,1,16.357,4.5,11.857,11.857,0,0,1,28.214,16.357Z"
+          transform="translate(-4.5 -4.5)"
+          fill="none"
+          stroke="#fff"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="4"
+        />
+        <path
+          id="Path_2"
+          data-name="Path 2"
+          d="M31.422,31.422l-6.447-6.447"
+          transform="translate(-4.744 -4.744)"
+          fill="none"
+          stroke="#fff"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="4"
+        />
+      </g>
+    </svg>
+  </span>
+);

@@ -11,8 +11,8 @@ import Email from "@material-ui/icons/Email";
 import Favorite from "@material-ui/icons/Favorite";
 import Face from "@material-ui/icons/Face";
 // core components
-import Header from "components/Header/Header.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
+import Header from "components/Header/CustomHeader.js";
+import HeaderLinks from "components/Header/CustomLinks.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -26,7 +26,8 @@ import loginPageStyle from "assets/jss/nextjs-material-kit-pro/pages/loginPageSt
 import facebook from "../assets/img/icons/facebook.svg";
 import twitter from "../assets/img/icons/twitter.svg";
 import { primaryColor } from "../assets/jss/nextjs-material-kit-pro";
-
+import whiteLogo from '../assets/img/icons/logo white.png'
+import primaryLogo from '../assets/img/icons/logo primary.png'
 import image from "assets/img/bg7.jpg";
 
 const useStyles = makeStyles(loginPageStyle);
@@ -40,10 +41,15 @@ export default function LoginPage() {
   return (
     <div>
       <Header
-        absolute
-        color="transparent"
-        brand="NextJS Material Kit PRO"
+        brand={primaryLogo}
         links={<HeaderLinks dropdownHoverColor="info" />}
+        fixed
+        color="white"
+        changeColorOnScroll={{
+          height: 86,
+          color: "white",
+          brand: primaryLogo
+        }}
       />
       <div
         className={classes.pageHeader}
@@ -61,72 +67,40 @@ export default function LoginPage() {
                     signup
                     className={classes.cardHeader}
                   >
-                    <h4 className={classes.cardTitle}>Login</h4>
-                    <div className={classes.socialLine}>
-                      <Button
-                        justIcon
-                        color="transparent"
-                        className={classes.iconButtons}
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <img src={facebook} alt="facebook" />
-                      </Button>
-                      <Button
-                        justIcon
-                        color="transparent"
-                        className={classes.iconButtons}
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <img src={twitter} alt="twitter" />
-                      </Button>
-                    </div>
+                    <h4 className={classes.cardTitle}>New Password</h4>
                   </CardHeader>
-                  <p className={classes.description + " " + classes.textCenter}>
-                    START EXPLORING
-                  </p>
                   <CardBody signup>
                     <CustomInput
-                      id="username"
+                      id="password"
                       formControlProps={{
                         fullWidth: true,
                         className: classes.formItem,
                       }}
                       inputProps={{
-                        placeholder: "User Name",
+                        placeholder: "New Password",
                         type: "text",
                       }}
                     />
                     <CustomInput
-                      id="pass"
+                      id="confirm-pass"
                       formControlProps={{
                         fullWidth: true,
                         className: classes.formItem,
                       }}
                       inputProps={{
-                        placeholder: "Password",
-                        type: "password",
-                        autoComplete: "off",
+                        placeholder: "Confirm Password",
+                        type: "text",
                       }}
                     />
+                   
                   </CardBody>
-                  <div className={classes.flex}>
-                    <a href="#" className={classes.forgetBtn}>
-                      Forgot User Name?
-                    </a>
-                    <a href="#" className={classes.forgetBtn}>
-                      Forgot Password?
-                    </a>
-                  </div>
-                  <div className={classes.textCenter}>
                     <Button
-                      simple
                       color="primary"
                       size="lg"
                       className={classes.loginBtn}
                     >
-                      Get started
+                      SUBMIT
                     </Button>
-                  </div>
                 </form>
               </Card>
             </GridItem>

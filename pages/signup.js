@@ -36,7 +36,7 @@ const useStyles = makeStyles(signupPageStyle);
 
 export default function SignUpPage({ ...rest }) {
   const [checked, setChecked] = React.useState([1]);
-  const handleToggle = value => {
+  const handleToggle = (value) => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
     if (currentIndex === -1) {
@@ -65,7 +65,7 @@ export default function SignUpPage({ ...rest }) {
         style={{
           backgroundImage: "url(" + image + ")",
           backgroundSize: "cover",
-          backgroundPosition: "top center"
+          backgroundPosition: "top center",
         }}
       >
         <div className={classes.container}>
@@ -74,105 +74,86 @@ export default function SignUpPage({ ...rest }) {
               <Card className={classes.cardSignup}>
                 <h2 className={classes.cardTitle}>Register</h2>
                 <CardBody>
-                  <GridContainer justify="center">
+                  <GridContainer justify="space-around">
                     <GridItem xs={12} sm={5} md={5}>
-                      <InfoArea
-                        className={classes.infoArea}
-                        title="Marketing"
-                        description="We've created the marketing campaign of the website. It was a very interesting collaboration."
-                        icon={Timeline}
-                        iconColor="rose"
-                      />
-                      <InfoArea
-                        className={classes.infoArea}
-                        title="Fully Coded in HTML5"
-                        description="We've developed the website with HTML5 and CSS3. The client has access to the code using GitHub."
-                        icon={Code}
-                        iconColor="primary"
-                      />
-                      <InfoArea
-                        className={classes.infoArea}
-                        title="Built Audience"
-                        description="There is also a Fully Customizable CMS Admin Dashboard for this product."
-                        icon={Group}
-                        iconColor="info"
-                      />
+                      <div className={classes.infoCard}>
+                        <h2 className={classes.infoTitle}>Setup your trip</h2>
+                        <p className={classes.infoDescription}>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                          nostrud exercitation ullamco laboris nisi ut aliquip
+                          ex ea commod
+                        </p>
+                      </div>
+                      <div className={classes.infoCard}>
+                        <h2 className={classes.infoTitle}>
+                          Explore New Places
+                        </h2>
+                        <p className={classes.infoDescription}>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                          nostrud exercitation ullamco laboris nisi ut aliquip
+                          ex ea commod
+                        </p>
+                      </div>
+                      <div className={classes.infoCard}>
+                        <h2 className={classes.infoTitle}>Meet new People</h2>
+                        <p className={classes.infoDescription}>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                          nostrud exercitation ullamco laboris nisi ut aliquip
+                          ex ea commod
+                        </p>
+                      </div>
                     </GridItem>
                     <GridItem xs={12} sm={5} md={5}>
-                      <div className={classes.textCenter}>
-                        <Button justIcon round color="twitter">
-                          <i className={classes.socials + " fab fa-twitter"} />
-                        </Button>
-                        {` `}
-                        <Button justIcon round color="dribbble">
-                          <i className={classes.socials + " fab fa-dribbble"} />
-                        </Button>
-                        {` `}
-                        <Button justIcon round color="facebook">
-                          <i
-                            className={classes.socials + " fab fa-facebook-f"}
-                          />
-                        </Button>
-                        {` `}
-                        <h4 className={classes.socialTitle}>or be classical</h4>
-                      </div>
                       <form className={classes.form}>
                         <CustomInput
                           formControlProps={{
                             fullWidth: true,
-                            className: classes.customFormControlClasses
+                            className: classes.customFormControlClasses,
                           }}
                           inputProps={{
-                            startAdornment: (
-                              <InputAdornment
-                                position="start"
-                                className={classes.inputAdornment}
-                              >
-                                <Face className={classes.inputAdornmentIcon} />
-                              </InputAdornment>
-                            ),
-                            placeholder: "First Name..."
+                            placeholder: "First Name",
+                            className: classes.formItem,
                           }}
                         />
                         <CustomInput
                           formControlProps={{
                             fullWidth: true,
-                            className: classes.customFormControlClasses
+                            className: classes.customFormControlClasses,
                           }}
                           inputProps={{
-                            startAdornment: (
-                              <InputAdornment
-                                position="start"
-                                className={classes.inputAdornment}
-                              >
-                                <Email className={classes.inputAdornmentIcon} />
-                              </InputAdornment>
-                            ),
-                            placeholder: "Email..."
+                            placeholder: "Last Name (Surname)",
+                            className: classes.formItem,
                           }}
                         />
                         <CustomInput
                           formControlProps={{
                             fullWidth: true,
-                            className: classes.customFormControlClasses
+                            className: classes.customFormControlClasses,
                           }}
                           inputProps={{
-                            startAdornment: (
-                              <InputAdornment
-                                position="start"
-                                className={classes.inputAdornment}
-                              >
-                                <Icon className={classes.inputAdornmentIcon}>
-                                  lock_outline
-                                </Icon>
-                              </InputAdornment>
-                            ),
-                            placeholder: "Password..."
+                            placeholder: "Email Address",
+                            className: classes.formItem,
+                          }}
+                        />
+                        <CustomInput
+                          formControlProps={{
+                            fullWidth: true,
+                            className: classes.customFormControlClasses,
+                          }}
+                          inputProps={{
+                            placeholder: "Create password",
+                            className: classes.formItem,
                           }}
                         />
                         <FormControlLabel
                           classes={{
-                            label: classes.label
+                            label: classes.label,
                           }}
                           control={
                             <Checkbox
@@ -184,7 +165,7 @@ export default function SignUpPage({ ...rest }) {
                               icon={<Check className={classes.uncheckedIcon} />}
                               classes={{
                                 checked: classes.checked,
-                                root: classes.checkRoot
+                                root: classes.checkRoot,
                               }}
                               checked={checked.indexOf(1) !== -1 ? true : false}
                             />
@@ -196,7 +177,7 @@ export default function SignUpPage({ ...rest }) {
                             </span>
                           }
                         />
-                        <div className={classes.textCenter}>
+                        <div>
                           <Button round color="primary">
                             Get started
                           </Button>
@@ -209,62 +190,6 @@ export default function SignUpPage({ ...rest }) {
             </GridItem>
           </GridContainer>
         </div>
-        <Footer
-          content={
-            <div>
-              <div className={classes.left}>
-                <List className={classes.list}>
-                  <ListItem className={classes.inlineBlock}>
-                    <a
-                      href="https://www.creative-tim.com/?ref=njsmkp-signup"
-                      target="_blank"
-                      className={classes.block}
-                    >
-                      Creative Tim
-                    </a>
-                  </ListItem>
-                  <ListItem className={classes.inlineBlock}>
-                    <a
-                      href="https://www.creative-tim.com/presentation?ref=njsmkp-signup"
-                      target="_blank"
-                      className={classes.block}
-                    >
-                      About us
-                    </a>
-                  </ListItem>
-                  <ListItem className={classes.inlineBlock}>
-                    <a
-                      href="http://blog.creative-tim.com/?ref=njsmkp-signup"
-                      className={classes.block}
-                    >
-                      Blog
-                    </a>
-                  </ListItem>
-                  <ListItem className={classes.inlineBlock}>
-                    <a
-                      href="https://www.creative-tim.com/license?ref=njsmkp-signup"
-                      target="_blank"
-                      className={classes.block}
-                    >
-                      Licenses
-                    </a>
-                  </ListItem>
-                </List>
-              </div>
-              <div className={classes.right}>
-                &copy; {1900 + new Date().getYear()} , made with{" "}
-                <Favorite className={classes.icon} /> by{" "}
-                <a
-                  href="https://www.creative-tim.com?ref=njsmkp-signup"
-                  target="_blank"
-                >
-                  Creative Tim
-                </a>{" "}
-                for a better web.
-              </div>
-            </div>
-          }
-        />
       </div>
     </div>
   );
