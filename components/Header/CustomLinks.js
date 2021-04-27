@@ -136,6 +136,7 @@ export default function HeaderLinks(props) {
       {user && user.id ? (
         <ListItem className={classes.listItem + " " + classes.navLink}>
           <CustomDropdown
+            className={classes.dropdown}
             left
             caret={false}
             hoverColor="light"
@@ -149,17 +150,17 @@ export default function HeaderLinks(props) {
               <ListItem
                 className={classes.listItem + " " + classes.dropdownItem}
               >
-                  <a className={classes.navItemFlex}>Account</a>
+                <a href="/dashboard" className={classes.clrDark}>Account</a>
               </ListItem>,
               <ListItem
                 className={classes.listItem + " " + classes.dropdownItem}
               >
-                  <a className={classes.navItemFlex}>Settings</a>
+                <a href="/settings" className={classes.clrDark}>Settings</a>
               </ListItem>,
               <ListItem
                 className={classes.listItem + " " + classes.dropdownItem}
               >
-                  <a className={classes.navItemFlex}>Sign out</a>
+                <a className={classes.clrDark}>Sign out</a>
               </ListItem>,
             ]}
           />

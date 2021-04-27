@@ -6,7 +6,7 @@ import {
 } from "assets/jss/nextjs-material-kit-pro.js";
 
 import tooltip from "assets/jss/nextjs-material-kit-pro/tooltipsStyle.js";
-import { primaryColor } from "../../nextjs-material-kit-pro";
+import { blackColor, primaryColor } from "../../nextjs-material-kit-pro";
 
 const headerLinksStyle = (theme) => ({
   profileImg: {
@@ -72,7 +72,7 @@ const headerLinksStyle = (theme) => ({
     color: grayColor[8],
     font: "normal normal normal 16px/19px Roboto",
     letterSpacing: "0px",
-    padding: "0 20px",
+    padding: "0",
     textAlign: "left",
     borderRadius: "10px",
   },
@@ -230,6 +230,12 @@ const headerLinksStyle = (theme) => ({
   navItemFlex: {
     display: "flex",
     width: "max-content",
+  },
+  clrDark: {
+    color: grayColor[8] + " !important",
+  },
+  dropdown: {
+    padding: "10px 4px",
   },
 });
 

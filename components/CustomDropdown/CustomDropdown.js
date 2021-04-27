@@ -55,7 +55,8 @@ export default function CustomDropdown(props) {
     rtlActive,
     noLiPadding,
     innerDropDown,
-    navDropdown
+    navDropdown,
+    className
   } = props;
   const classes = useStyles();
   const caretClasses = classNames({
@@ -71,7 +72,7 @@ export default function CustomDropdown(props) {
     [classes.dropdownItemRTL]: rtlActive
   });
   const dropDownMenu = (
-    <MenuList role="menu" className={classes.menuList}>
+    <MenuList role="menu" className={classes.menuList + " "+ className}>
       {dropdownHeader !== undefined ? (
         <MenuItem
           onClick={() => handleCloseMenu(dropdownHeader)}

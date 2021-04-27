@@ -144,7 +144,8 @@ const customDropdownStyle = (theme) => ({
     },
   },
   lightHover: {
-    borderRadius: "10px",
+    borderRadius: "18px",
+    color: grayColor[26],
     "&:hover": {
       backgroundColor: lightColor[1],
       color: grayColor[26],

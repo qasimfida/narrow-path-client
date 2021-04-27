@@ -163,7 +163,7 @@ const headerStyle = theme => ({
       hexToRgb(blackColor) +
       ", 0.15)",
       '& li a': {
-        color: blackColor
+        color: grayColor[8]
       }
   },
   drawerPaper: {
