@@ -11,7 +11,13 @@ import {
   hexToRgb,
 } from 'assets/jss/nextjs-material-kit-pro.js';
 
-const navPillsStyle = (theme) => ({
+const frequent = (theme) => ({
+  wrapper: {},
+  heading: {
+    font: 'normal normal bold 36px/55px Roboto',
+    letterSpacing: '0px',
+    color: '#000000',
+  },
   root: {
     marginTop: '20px',
     paddingLeft: '0',
@@ -41,17 +47,16 @@ const navPillsStyle = (theme) => ({
     minWidth: '100px',
     textAlign: 'center',
     transition: 'all .3s',
-    padding: '10px 15px',
-    color: grayColor[15],
+    padding: '12px 15px 8px',
+    color: blackColor,
     height: 'auto',
     opacity: '1',
     maxWidth: '100%',
-    margin: '0 5px',
+    margin: '18px 5px',
     minHeight: 'unset',
-    lineHeight: '24px',
-    textTransform: 'uppercase',
-    fontSize: '12px',
-    fontWeight: '500',
+    textTransform: 'unset',
+    font: 'normal normal bold 18px/22px Roboto',
+    letterSpacing: '0px',
   },
   pillsWithIcons: {
     borderRadius: '4px',
@@ -153,7 +158,6 @@ const navPillsStyle = (theme) => ({
   dark: {
     color: blackColor,
     padding: '12px 40px',
-    textTransform: 'uppercase',
     opacity: '0.49 !important',
     '&,&:hover': {
       color: whiteColor,
@@ -175,4 +179,4 @@ const navPillsStyle = (theme) => ({
   },
 });
 
-export default navPillsStyle;
+export default frequent;

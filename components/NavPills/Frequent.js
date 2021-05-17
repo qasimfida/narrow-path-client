@@ -14,11 +14,11 @@ import Tabs from '@material-ui/core/Tabs';
 import GridContainer from 'components/Grid/GridContainer.js';
 import GridItem from 'components/Grid/GridItem.js';
 
-import styles from 'assets/jss/nextjs-material-kit-pro/components/navPillsStyle.js';
+import styles from 'assets/jss/nextjs-material-kit-pro/components/frequent.js';
 
 const useStyles = makeStyles(styles);
 
-export default function NavPills(props) {
+export default function Frequent(props) {
   const [active, setActive] = React.useState(props.active);
   const handleChange = (event, active) => {
     setActive(active);
@@ -99,12 +99,12 @@ export default function NavPills(props) {
   );
 }
 
-NavPills.defaultProps = {
+Frequent.defaultProps = {
   active: 0,
   color: 'primary',
 };
 
-NavPills.propTypes = {
+Frequent.propTypes = {
   // index of the default active pill
   active: PropTypes.number,
   tabs: PropTypes.arrayOf(
