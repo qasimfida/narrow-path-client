@@ -49,152 +49,133 @@ import styles from "assets/jss/nextjs-material-kit-pro/components/headerLinksSty
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
-  const easeInOutQuad = (t, b, c, d) => {
-    t /= d / 2;
-    if (t < 1) return (c / 2) * t * t + b;
-    t--;
-    return (-c / 2) * (t * (t - 2) - 1) + b;
-  };
+	const easeInOutQuad = (t, b, c, d) => {
+		t /= d / 2;
+		if (t < 1) return (c / 2) * t * t + b;
+		t--;
+		return (-c / 2) * (t * (t - 2) - 1) + b;
+	};
 
-  const smoothScroll = (e, target) => {
-    if (window.location.pathname === "/sections") {
-      var isMobile = navigator.userAgent.match(
-        /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
-      );
-      if (isMobile) {
-        // if we are on mobile device the scroll into view will be managed by the browser
-      } else {
-        e.preventDefault();
-        var targetScroll = document.getElementById(target);
-        scrollGo(document.documentElement, targetScroll.offsetTop, 1250);
-      }
-    }
-  };
-  const scrollGo = (element, to, duration) => {
-    var start = element.scrollTop,
-      change = to - start,
-      currentTime = 0,
-      increment = 20;
+	const smoothScroll = (e, target) => {
+		if (window.location.pathname === "/sections") {
+			var isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
+			if (isMobile) {
+				// if we are on mobile device the scroll into view will be managed by the browser
+			} else {
+				e.preventDefault();
+				var targetScroll = document.getElementById(target);
+				scrollGo(document.documentElement, targetScroll.offsetTop, 1250);
+			}
+		}
+	};
+	const scrollGo = (element, to, duration) => {
+		var start = element.scrollTop,
+			change = to - start,
+			currentTime = 0,
+			increment = 20;
 
-    var animateScroll = function () {
-      currentTime += increment;
-      var val = easeInOutQuad(currentTime, start, change, duration);
-      element.scrollTop = val;
-      if (currentTime < duration) {
-        setTimeout(animateScroll, increment);
-      }
-    };
-    animateScroll();
-  };
-  var onClickSections = {};
+		var animateScroll = function () {
+			currentTime += increment;
+			var val = easeInOutQuad(currentTime, start, change, duration);
+			element.scrollTop = val;
+			if (currentTime < duration) {
+				setTimeout(animateScroll, increment);
+			}
+		};
+		animateScroll();
+	};
+	var onClickSections = {};
 
-  const { dropdownHoverColor } = props;
-  const classes = useStyles();
+	const { dropdownHoverColor } = props;
+	const classes = useStyles();
 
-  useEffect(() => {
-    console.log(props);
-  }, []);
+	useEffect(() => {
+		console.log(props);
+	}, []);
 
-  const links = [
-    {
-      name: "Magazine",
-      link: "/presentation",
-    },
-    {
-      name: "Trip Guide",
-      link: "/home",
-    },
-    {
-      name: "Features",
-      link: "/home",
-    },
-    {
-      name: "Explore",
-      link: "/home",
-    },
-  ];
-  const Profile = ({ className }) => {
-    return (
-      <div className={classes.profileImg}>
-        <img src={profileImage} alt="profile" />
-      </div>
-    );
-  };
-  const user = { id: "12341234" };
-  return (
-    <List className={classes.list + " " + classes.mlAuto}>
-      {links.map((item) => (
-        <ListItem
-          key={item.name}
-          className={classes.listItem + " " + classes.navLink}
-        >
-          <Link href={item.link}>
-            <a className={classes.navItemFlex}>{item.name}</a>
-          </Link>
-        </ListItem>
-      ))}
-      {user && user.id ? (
-        <ListItem className={classes.listItem + " " + classes.navLink}>
-          <CustomDropdown
-            className={classes.dropdown}
-            left
-            caret={false}
-            hoverColor="light"
-            buttonText={<Profile />}
-            buttonProps={{
-              className: classes.navLink + " " + classes.imageDropdownButton,
-              color: "transparent",
-            }}
-            dropPlacement="bottom"
-            dropdownList={[
-              <ListItem
-                className={classes.listItem + " " + classes.dropdownItem}
-              >
-                <a href="/dashboard" className={classes.clrDark}>Account</a>
-              </ListItem>,
-              <ListItem
-                className={classes.listItem + " " + classes.dropdownItem}
-              >
-                <a href="/settings" className={classes.clrDark}>Settings</a>
-              </ListItem>,
-              <ListItem
-                className={classes.listItem + " " + classes.dropdownItem}
-              >
-                <a className={classes.clrDark}>Sign out</a>
-              </ListItem>,
-            ]}
-          />
-        </ListItem>
-      ) : (
-        <>
-          <ListItem className={classes.listItem + " " + classes.navLink}>
-            <Link href="/signup">
-              <a className={classes.navItemFlex}>Sign Up</a>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Button color="white" round>
-              Login
-            </Button>
-          </ListItem>
-        </>
-      )}
-    </List>
-  );
+	const links = [
+		{
+			name: "Magazine",
+			link: "/",
+		},
+		{
+			name: "Dashboard",
+			link: "/dashboard",
+		},
+		{
+			name: "Login",
+			link: "/signup",
+		},
+	];
+	const Profile = ({ className }) => {
+		return (
+			<div className={classes.profileImg}>
+				<img src={profileImage} alt="profile" />
+			</div>
+		);
+	};
+	const user = { id: "12341234" };
+	return (
+		<List className={classes.list + " " + classes.mlAuto}>
+			{links.map((item) => (
+				<ListItem key={item.name} className={classes.listItem + " " + classes.navLink}>
+					<Link href={item.link}>
+						<a className={classes.navItemFlex}>{item.name}</a>
+					</Link>
+				</ListItem>
+			))}
+			{user && user.id ? (
+				<ListItem className={classes.listItem + " " + classes.navLink}>
+					<CustomDropdown
+						className={classes.dropdown}
+						left
+						caret={false}
+						hoverColor="light"
+						buttonText={<Profile />}
+						buttonProps={{
+							className: classes.navLink + " " + classes.imageDropdownButton,
+							color: "transparent",
+						}}
+						dropPlacement="bottom"
+						dropdownList={[
+							<ListItem className={classes.listItem + " " + classes.dropdownItem}>
+								<a href="/dashboard" className={classes.clrDark}>
+									Account
+								</a>
+							</ListItem>,
+							<ListItem className={classes.listItem + " " + classes.dropdownItem}>
+								<a href="/settings" className={classes.clrDark}>
+									Settings
+								</a>
+							</ListItem>,
+							<ListItem className={classes.listItem + " " + classes.dropdownItem}>
+								<a className={classes.clrDark}>Sign out</a>
+							</ListItem>,
+						]}
+					/>
+				</ListItem>
+			) : (
+				<>
+					<ListItem className={classes.listItem + " " + classes.navLink}>
+						<Link href="/signup">
+							<a className={classes.navItemFlex}>Sign Up</a>
+						</Link>
+					</ListItem>
+					<ListItem>
+						<Button color="white" round>
+							Login
+						</Button>
+					</ListItem>
+				</>
+			)}
+		</List>
+	);
 }
 
 HeaderLinks.defaultProps = {
-  hoverColor: "primary",
+	hoverColor: "primary",
 };
 
 HeaderLinks.propTypes = {
-  dropdownHoverColor: PropTypes.oneOf([
-    "dark",
-    "primary",
-    "info",
-    "success",
-    "warning",
-    "danger",
-    "rose",
-  ]),
+	dropdownHoverColor: PropTypes.oneOf(["dark", "primary", "info", "success", "warning", "danger", "rose"]),
 };

@@ -4,21 +4,19 @@ import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
 
 const QUERY = gql`
-  {
-    title
-  }
+	{
+		title
+	}
 `;
 
-const Index =() => {
+const Index = () => {
+	const { data, isLoading, error } = useQuery(QUERY);
 
-  const {data, isLoading, error} = useQuery(QUERY);
+	useEffect(() => {
+		Router.push("/magazine");
+	}, []);
 
-  console.log(data, isLoading, error);
-  useEffect(() => {
-    Router.push("/presentation");
-  }, []);
-
-  return <div />;
+	return <div />;
 };
 
-export default Index
+export default Index;
