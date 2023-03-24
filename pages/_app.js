@@ -62,11 +62,6 @@ const MyApp = ({ Component, pageProps, apollo }) => {
 	);
 };
 
-MyApp.getInitialProps = async (appContext) => {
-	const appProps = await App.getInitialProps(appContext);
-	return { ...appProps };
-};
-
 export default withApollo(({ initialState }) => {
 	return new ApolloClient({
 		uri: "https://mysite.com/graphql",
